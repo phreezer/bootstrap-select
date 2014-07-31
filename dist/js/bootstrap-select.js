@@ -251,6 +251,8 @@
         if ((max.length > 1 && selectedItems.length > max[1]) || (max.length == 1 && selectedItems.length >= 2)) {
           title = this.options.countSelectedText.replace('{0}', selectedItems.length).replace('{1}', this.$element.find('option:not([data-divider="true"], [data-hidden="true"])' + notDisabled).length);
         }
+      } else (this.multiple && this.options.selectedTextFormat.indexOf('title') > -1){
+        title = this.$element.attr('title');
       }
 
       this.options.title = this.$element.attr('title');
